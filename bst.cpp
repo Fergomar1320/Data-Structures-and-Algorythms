@@ -20,21 +20,17 @@ void BST::insert(double &value, string tx, Node *& root){
             insert (value, tx, root->right);
         }
         else{
-            cout << "Repeated element. \n";
-            Root->repeated++;
-            //insertRepeated(root->ip);
-            this->index.push(root->ip);
-            this->table.push(this->index);
-            cout << "Size: " << this->table.size() << " IP repeated: " << this->index.front()<< endl;
+            int i = 0;
+            cout << "Repeated element.";
+            Root->repeated++;  
+            this->repeated.push(root->ip);          
+            //this->index.push(root->ip);
+            //this->table.push(this->index);
+            cout << "\tSize: " << this->repeated.size() << " IP repeated: " << this->repeated.back()<< endl;
         }
     }
 }//complexity o(1)
 
-/*void BST::insertRepeated(double& value){
-    this->index.push(value);
-    this->table.push(this->index);
-    cout << "Size: " << this->table.size() << " IP repeated: " << this->index.front()<< endl;
-}*/
 
 void BST::preOrder(Node *root){
     if(root == NULL){
@@ -50,7 +46,7 @@ void BST::inOrder(Node *root){
         return;
     }
     inOrder(root->left);
-    cout << root->ip << " " << root->text << " -->";
+    cout << root->ip << " " << root->text << " -->\n";
     inOrder(root->right);
 
 }//complexity o(n^2)

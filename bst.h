@@ -9,11 +9,11 @@ using namespace std;
 class BST{      //Binary Search Tree
     private:
         Node *Root;
-        queue <queue <double>> table;
-        queue <double> index;
+        vector <vector <double>> table;
+        vector <double> index;
+        queue <double> repeated;
 
         void insert(double &, string, Node *&);
-        //void insertRepeated(double &, queue<queue<double>> &, queue<double> &);
         void inOrder(Node *);
         void preOrder(Node *);
         void postOrder(Node *);
@@ -34,7 +34,6 @@ class BST{      //Binary Search Tree
 
         //Funciones
         void insert(double &value, string data) {insert(value, data, this->Root);}
-        //void insertRepeated(double &value) {insertRepeated(value, this->table, this->index);}
         void inOrder() {(inOrder(this->Root));}
         void preOrder() {(preOrder(this->Root));}
         void postOrder() {(postOrder(this->Root));}

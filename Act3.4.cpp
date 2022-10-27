@@ -30,12 +30,16 @@ void fileReading(BST &tree) {
     cout << "The file was read correctly" << endl;
 } //Time Complexity O(n)
 
+
 int main(){
     BST arbol;
     fileReading(arbol);
+    arbol.inOrder();
+    
+    BST IpRepeated;
+    //IpRepeated = arbol.repeatedIp();
+    //IpRepeated->inOrder();
 
-    arbol.preOrder();
-    cout << endl;
     return 0;
 }
 
